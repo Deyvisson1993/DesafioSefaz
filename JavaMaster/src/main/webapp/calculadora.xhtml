@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Calculadora</title>
+</h:head>
+<h:body>
+	<h:form id="CalculadoraBean">
+		<p:dialog header="Calculadora" widgetVar="mostrar" modal="true"
+			visible="true" closable="false" resizable="false">
+			<p:panelGrid columns="2">
+				<h:outputLabel value="Valor1:" />
+				<p:inputText id="valor1" maxlength="10" size="10" value="#{CalculadoraBean.valor1}"/>
+				<h:outputLabel value="Valor2:" />
+				<p:inputText id="valor2" maxlength="10" size="10" value="#{CalculadoraBean.valor2}"/>
+				<h:outputLabel value="Resultado:" />
+				<p:inputText id="resultado" maxlength="10" size="10" disabled="true" value="#{CalculadoraBean.resultado}"/>
+			</p:panelGrid>
+
+			<p:panelGrid columns="2">
+				<h:commandButton id="somar" value="Somar" action="#{CalculadoraBean.somar}"/>
+
+			</p:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templatePrincipal.xhtml">
+	<ui:define name="conteudo">
+
+		<p:panel header="Cadastra - Pergunta ">
+			<h:form>
+				<h:panelGrid columns="2" cellpadding="10">
+
+					<p:outputLabel value="Usuario" />
+					<p:selectOneMenu filter="true"
+						value="#{perguntaBean.pergunta.usuario}"
+						converter="omnifaces.SelectItemsConverter" required="true"
+						requiredMessage="o 'Campo' Usuario é OBRIGATORIO">
+
+						<f:selectItem noSelectionOption="true"
+							itemLabel="Selecione um Usuario" />
+						<f:selectItems value="#{perguntaBean.usuarios}" var="usuario"
+							itemValue="#{usuario}" itemLabel="#{usuario.nome}" />
+
+					</p:selectOneMenu>
+
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" cellpadding="10">
+					<h3 style="margin-left: 0">Descrição</h3>
+					<p:textEditor widgetVar="Descricao" height="300"
+						style="margin-bottom:10px"
+						value="#{perguntaBean.pergunta.descricao}" />
+
+					<h:outputText value="Estatus:" />
+					<p:inputSwitch onLabel="S" offLabel="N"
+						value="#{perguntaBean.pergunta.ativo}" />
+
+					<p:commandButton value="Salvar"
+						actionListener="#{perguntaBean.salvar}" style="margin-right:20px;"
+						update=":Mensagem "/>
+
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+	</ui:define>
+</ui:composition>
+</html>

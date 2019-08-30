@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Projeto Perguntas Fuctura</title>
+</h:head>
+<h:body>
+	<p:growl id="Mensagem" />
+	<h:form>
+		<table width="100%">
+			<tr>
+				<td colspan="2" align="center">
+				<ui:insert name="cabecalho">
+					<h1>Projeto Perguntas Fuctura</h1>
+				</ui:insert>
+				</td>
+			</tr>
+			<tr>
+				<td width="20%" valign="top">
+				<ui:insert name="menu">
+					<h1>Menu</h1>
+					<h:panelGrid columns="1">
+						<h:commandLink value="Index" action="templatePrincipal.xhtml" immediate="true" />
+						<h:commandLink value="Manter Pergunta" action="/paginas/pergunta/manterPergunta.xhtml" immediate="true" actionListener="#{perguntaBean.novo}"/>
+						<h:commandLink value="Pesquisar Pergunta" action="/paginas/pergunta/pesquisarPergunta.xhtml" immediate="true" />
+						<h:commandLink value="Votar" action="/paginas/votacao/realizarVotacao.xhtml" immediate="true" />
+					</h:panelGrid>
+				</ui:insert></td>
+				<td>
+					<ui:insert name="conteudo">
+              			Conteúdo
+            		</ui:insert>
+            	</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

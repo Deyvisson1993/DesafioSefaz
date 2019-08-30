@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JavaMaster">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<class>br.com.JavaMaster.entidade.Curso</class>
+		<class>br.com.JavaMaster.entidade.Perfil</class>
+		<class>br.com.JavaMaster.entidade.Pergunta</class>
+		<class>br.com.JavaMaster.entidade.Resposta</class>
+		<class>br.com.JavaMaster.entidade.Usuario</class>
+		<class>br.com.JavaMaster.entidade.Votacao</class>
+		<class>br.com.JavaMaster.entidade.VotacaoUsuario</class>
+
+		<properties>
+			<!-- Conexão com o banco de dados -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.connection.driver_class"
+				value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://localhost:3306/java" />
+			<property name="hibernate.connection.user" value="root" />
+			<property name="hibernate.connection.password" value="8896" />
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<!--Configuracoes de Debug -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="use_sql_comments" value="true" />
+
+		</properties>
+
+	</persistence-unit>
+</persistence>
